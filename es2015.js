@@ -46,12 +46,60 @@ const destructure = () => {
     console.log(firstName);
     console.log(lastName);
     console.log(myTitle);
+
+    const arr = [1, "hello", 3];
+    const [ first, second, third ] = arr;
+    console.log(first);
+    console.log(second);
+    console.log(third);
 };
+
+// import and export
+
+// promises
+const promises = () => {
+    const myPromise = () => {
+        return new Promise((resolve, reject) => {
+            resolve("hello");
+        });
+    };
+
+    console.log(myPromise());
+};
+
+// rest parameter
+const restParam = () => {
+    const arr = [1, 2, 3, 4, 5, 6];
+    const [first, second, ...rest] = arr;
+
+    console.log(first);
+    console.log(second);
+
+    const str = rest.reduce((temp, num) => (temp + num), "");
+    console.log(str);
+};
+
+// spread operator
+const spread = () => {
+    const print = (first, second, third) => {
+        console.log(first);
+        console.log(second);
+        console.log(third);
+    };
+
+    const arr = [1, 2, 3];
+    print(...arr);
+};
+
+// classes
 
 module.exports = {
     keywords,
     arrow,
     literal,
     defaultParam,
-    destructure
+    destructure,
+    promises,
+    restParam,
+    spread
 }
